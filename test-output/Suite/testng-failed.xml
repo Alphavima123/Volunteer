@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="Portal_page1.Donor_TESTCASE1_1">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="OpenBrowser"/>
+          <include name="logoutBrowser"/>
+          <include name="open"/>
+          <include name="FillInfo"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1_1 -->
+      <class name="Portal_page1.Donor_TESTCASE1_3">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="FillInfo"/>
+          <include name="OpenBrowser"/>
+          <include name="logoutBrowser"/>
+          <include name="open"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1_3 -->
+      <class name="Portal_page1.Donor_TESTCASE1_10">
+        <methods>
+          <include name="logoutBrowser"/>
+          <include name="open"/>
+          <include name="closeBrowser"/>
+          <include name="FillInfo"/>
+          <include name="OpenBrowser"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1_10 -->
+      <class name="Portal_page1.Donor_TESTCASE1_5">
+        <methods>
+          <include name="FillInfo"/>
+          <include name="closeBrowser"/>
+          <include name="OpenBrowser"/>
+          <include name="logoutBrowser"/>
+          <include name="open"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1_5 -->
+      <class name="Portal_page1.Donor_TESTCASE1_8">
+        <methods>
+          <include name="logoutBrowser"/>
+          <include name="open"/>
+          <include name="closeBrowser"/>
+          <include name="FillInfo"/>
+          <include name="OpenBrowser"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1_8 -->
+      <class name="Portal_page1.Donor_TESTCASE1">
+        <methods>
+          <include name="logoutBrowser"/>
+          <include name="open"/>
+          <include name="closeBrowser"/>
+          <include name="FillInfo"/>
+          <include name="OpenBrowser"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1 -->
+      <class name="Portal_page1.Donor_TESTCASE1_6">
+        <methods>
+          <include name="FillInfo"/>
+          <include name="closeBrowser"/>
+          <include name="logoutBrowser"/>
+          <include name="OpenBrowser"/>
+          <include name="open"/>
+        </methods>
+      </class> <!-- Portal_page1.Donor_TESTCASE1_6 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
