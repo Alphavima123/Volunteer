@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 	public class CRM_VOL_volunteer_Applications 
 	{
 
-	@FindBy(xpath="//div[@id='AppDetailsSec_1_Item_21']")private WebElement clickonVolunteerMgmt;
+	@FindBy(xpath="(//div[@title='Volunteer Management'])[2]")private WebElement clickonVolunteerMgmt;
 	@FindBy(xpath="//span[text()='Volunteer Applications']")private WebElement clickonVolunteerApplications;
 	@FindBy(xpath="//button[@aria-label='New']")private WebElement clickonNew;
 //	@FindBy(xpath="//input[@aria-label='Opportunity, Lookup']")private WebElement Opportunity;

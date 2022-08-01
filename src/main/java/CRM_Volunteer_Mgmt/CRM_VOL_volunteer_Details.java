@@ -1,6 +1,7 @@
 package CRM_Volunteer_Mgmt;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 	public class CRM_VOL_volunteer_Details 
 	{
 
-	@FindBy(xpath="//div[@id='AppDetailsSec_1_Item_21']")private WebElement clickonVolunteerMgmt;
+	@FindBy(xpath="(//div[@title='Volunteer Management'])[2]")private WebElement clickonVolunteerMgmt;
 	@FindBy(xpath="//span[text()='Volunteer']")private WebElement clickonVolunteer;
 	@FindBy(xpath="//button[@aria-label='New']")private WebElement clickonNew;
 //	@FindBy(xpath="//input[@aria-label='Opportunity Title']")private WebElement clickonTitle;
@@ -21,7 +22,7 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//input[@aria-label='Position Title']")private WebElement PositionTitle;
 	@FindBy(xpath="(//input[@aria-label='Email- Primary'])[1]")private WebElement EmailPrimary;
 	@FindBy(xpath="(//input[@aria-label='Mobile Phone'])[1]")private WebElement MobilePhone;
-	@FindBy(xpath="//input[@aria-label='Contact Stewarded By, Lookup']")private WebElement ContactStewardedBy;
+//	@FindBy(xpath="//input[@aria-label='Contact Stewarded By, Lookup']")private WebElement ContactStewardedBy;
 	@FindBy(xpath="//button[@aria-label='Save (CTRL+S)']")private WebElement clickonSave;
 	@FindBy(xpath="//li[@aria-label='Details']")private WebElement clickonDetails;
 	@FindBy(xpath="//button[@aria-label='Toggle menu']")private WebElement clickonContactMethod;
@@ -40,6 +41,7 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//textarea[@aria-label='Area of Expertise']")private WebElement AreaofExpertise;
 	@FindBy(xpath="//textarea[@aria-label='Focus/Specialty']")private WebElement FocusSpecialty;
 	@FindBy(xpath="//textarea[@aria-label='Internal Note']")private WebElement InternalNote;
+	@FindBy(xpath="//button[@aria-label='Save (CTRL+S)']")private WebElement Save;
 
 
 	public CRM_VOL_volunteer_Details  (WebDriver driver)
@@ -66,33 +68,39 @@ import org.openqa.selenium.support.PageFactory;
 		s.selectByIndex(2);	
 	}
 	
-	public void setCRMvolunteerFirstName(String fName)
+	public void setCRMvolunteerFirstName(String fName) throws InterruptedException
 	{
+		Thread.sleep(1000);
 		FirstName.clear();
 		FirstName.sendKeys(fName);
 	}
-	public void setCRMvolunteerLastName(String lName)
+	public void setCRMvolunteerLastName(String lName) throws InterruptedException
 	{
+		Thread.sleep(1000);
 		LastName.clear();
 		LastName.sendKeys(lName);
 	}
-	public void setCRMvolunteerSalutation(String salutation)
+	public void setCRMvolunteerSalutation(String salutation) throws InterruptedException
 	{
+		Thread.sleep(1000);
 		Salutation.clear();
 		Salutation.sendKeys(salutation);
 	}
-	public void setCRMvolunteerPositionTitle(String positionTitle)
+	public void setCRMvolunteerPositionTitle(String positionTitle) throws InterruptedException
 	{
+		Thread.sleep(1000);
 		PositionTitle.clear();
 		PositionTitle.sendKeys(positionTitle);
 	}
-	public void setCRMvolunteerEmailPrimary(String Email)
+	public void setCRMvolunteerEmailPrimary(String Email) throws InterruptedException
 	{
+		Thread.sleep(1000);
 		EmailPrimary.clear();
 		EmailPrimary.sendKeys(Email);
 	}
-	public void setCRMvolunteerMobilePhone(String Mobile)
+	public void setCRMvolunteerMobilePhone(String Mobile) throws InterruptedException
 	{
+		Thread.sleep(1000);
 		MobilePhone.clear();
 		MobilePhone.sendKeys(Mobile);
 	}
@@ -102,12 +110,20 @@ import org.openqa.selenium.support.PageFactory;
 		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
 		s.selectByIndex(2);	
 	}
-	
-	public void setCRMvolunteerContactStewardedBy(String StewardedBy)
+	public void clickonContactStewardedBy(WebDriver driver)
 	{
-		ContactStewardedBy.clear();
-		ContactStewardedBy.sendKeys(StewardedBy);
+		WebElement Time = driver.findElement(By.xpath("//input[@aria-label='Contact Stewarded By, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(Time).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();
 	}
+//	public void setCRMvolunteerContactStewardedBy(String StewardedBy)
+//	{
+//		ContactStewardedBy.clear();
+//		ContactStewardedBy.sendKeys(StewardedBy);
+//	}
 	
 	public void clickonclickonSave()
 	{
@@ -243,7 +259,16 @@ import org.openqa.selenium.support.PageFactory;
 		InternalNote.clear();
 		InternalNote.sendKeys(internalNote);
 	}
-	
+	public void clickoncalander(WebDriver driver) 
+	{
+		WebElement cal = driver.findElement(By.xpath("(//i[@data-icon-name='Calendar'])[3]"));
+		JavascriptExecutor js= ((JavascriptExecutor)driver);
+		js.executeScript("arguments[0].click();", cal);
+	}
+	public void clickonsave()
+	{
+		Save.click();
+	}
 	
 	
 	}

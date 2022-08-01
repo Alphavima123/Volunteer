@@ -1,8 +1,10 @@
 package CRM_Module;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -24,7 +26,8 @@ public class CRM_Prospect_Page3
     @FindBy(xpath ="//input[@aria-label='Business Phone Ext.']") private WebElement BusinessPhoneExt; 
     @FindBy(xpath ="//input[@aria-label='Mobile Phone']") private WebElement Mobilephone; 
     
-    @FindBy(xpath = "//input[@aria-label='Cause, Lookup']")private WebElement cause;
+//    @FindBy(xpath = "//input[@aria-label='Cause, Lookup']")private WebElement cause;
+    
     @FindBy(xpath = "//input[@aria-label='New Organization']")private WebElement Neworgaization;
     @FindBy(xpath = "//input[@aria-label='Organization Phone Number']")private WebElement Neworgaizationphoneno;
     @FindBy(xpath = "(//input[@aria-label='Email'])[2]")private WebElement NeworgaizationEmail;
@@ -36,7 +39,8 @@ public class CRM_Prospect_Page3
     
 	@FindBy(xpath = "//button[@aria-label='Save (CTRL+S)']")private WebElement clickonsave;
 	@FindBy(xpath = "//button[@title='Qualify']")private WebElement clickonqualify;
-	@FindBy(xpath = "//button[@id='confirmButton']")private WebElement clickonpopup;
+	@FindBy(xpath = "//button[@aria-label='OK']")private WebElement clickonOK;
+
 	
 	public CRM_Prospect_Page3 (WebDriver driver)
 	{
@@ -145,15 +149,15 @@ public class CRM_Prospect_Page3
 		Mobilephone.sendKeys(Mphone);
 	}
 	
-	public void setCRMProspectpage3cause(String username) throws InterruptedException
+	public void clickoncause(WebDriver driver)
 	{
-//		WebElement type = driver.findElement(By.xpath("(//input[@role=\"combobox\"])[4]"));
-//		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
-//		s.selectByIndex(1);
-		
-		cause.clear();
-		Thread.sleep(2000);
-		cause.sendKeys("Environment");
+		WebElement cause = driver.findElement(By.xpath("//input[@aria-label='Cause, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(cause).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();		
 	}
 	public void setNeworgaizationProspectpage3(String neworg)
 	{
@@ -169,8 +173,10 @@ public class CRM_Prospect_Page3
 		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
 		s.selectByIndex(1);
 	}
-	public void setNeworgaizationEmailProspectpage3(String neworgEmail)
+	public void setNeworgaizationEmailProspectpage3(String neworgEmail) throws InterruptedException
 	{
+		Thread.sleep(2000);
+		NeworgaizationEmail.clear();
 		NeworgaizationEmail.sendKeys(neworgEmail);
 	}
 	public void clickonsaveProspectpage3()
@@ -181,10 +187,10 @@ public class CRM_Prospect_Page3
 	{
 		clickonqualify.click();
 	}
-	public void clickonpopupProspectpage3()
+	public void clickonOK()
 	{
-		clickonpopup.click();
+		clickonOK.click();
 	}
-
+	
 	
 }

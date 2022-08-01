@@ -1,8 +1,6 @@
 package CRM_Volunteer_Mgmt;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.Test;
 
 import Libery_Files.Utilityclass_CRM_page;
@@ -44,10 +42,10 @@ public void loginToApp() throws IOException, InterruptedException
 	
 	//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	Thread.sleep(3000);
-	Opportunity.setCRMvolunteerpageJobTitle(Utilityclass.getTD(8, 0));
+	Opportunity.setCRMvolunteerpageJobTitle(Utilityclass.getTD(10, 0));
 	Thread.sleep(3000);
-	
-	Opportunity.setCRMvolunteerOpportunity(Utilityclass.getTD(8, 1));
+	Opportunity.clickonVolunteeropp(driver);
+//	Opportunity.setCRMvolunteerOpportunity(Utilityclass.getTD(8, 1));
 	Thread.sleep(3000);
 	
 	Opportunity.clickonStartdate();
@@ -70,10 +68,10 @@ public void loginToApp() throws IOException, InterruptedException
 //	Opportunity.setCRMvolunteerSchedulepageEnddate("End date");
 //	Thread.sleep(3000);
 //	Opportunity.setCRMvolunteerOpportunityEndTime(Utilityclass.getTD(8, 5));
-	Thread.sleep(3000);
+	Thread.sleep(5500);
 	Opportunity.setCRMvolunteerpageExpectedHours(Utilityclass.getTD(8, 6));
 	
-	Opportunity.clickonWorkingDay();
+//	Opportunity.clickonWorkingDay();
 	Thread.sleep(3000);
 	Opportunity.clickonOnSave();
 	

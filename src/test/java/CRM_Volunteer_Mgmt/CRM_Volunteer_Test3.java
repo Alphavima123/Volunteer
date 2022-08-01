@@ -74,21 +74,39 @@ public void loginToApp() throws IOException, InterruptedException
 	Opportunity.setCRMvolunteerpage3Video(Utilityclass.getTD(1, 13));
 	Thread.sleep(2000);
 	Opportunity.setCRMvolunteerpage3Bitly(Utilityclass.getTD(1, 14));
+	Thread.sleep(5000);
+     
+	//Opportunity.clickonBoth(driver);
+//	Opportunity.clickonLocationType();
+//	Thread.sleep(3000);
+//	
+//	Opportunity.setCRMvolunteerpage3LocationName(Utilityclass.getTD(1, 15));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3Street1(Utilityclass.getTD(1, 16));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3Street2(Utilityclass.getTD(1, 17));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3Street3(Utilityclass.getTD(1, 18));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3City1(Utilityclass.getTD(1, 19));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3State_Province(Utilityclass.getTD(1, 20));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3ZIP_PostalCode(Utilityclass.getTD(1, 21));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3Country(Utilityclass.getTD(1, 22));
+//	Thread.sleep(1000);
+//	Opportunity.setCRMvolunteerpage3URL(Utilityclass.getTD(1, 23));
+	Thread.sleep(5000);
+	
+	Opportunity.clickonCRMvolunteerpage3AccountName(driver);
 	Thread.sleep(3000);
-	Opportunity.clickonLocationType();
-	Thread.sleep(3000);
-	Opportunity.setCRMvolunteerpage3LocationName(Utilityclass.getTD(1, 15));
-	Opportunity.setCRMvolunteerpage3Street1(Utilityclass.getTD(1, 16));
-	Opportunity.setCRMvolunteerpage3Street2(Utilityclass.getTD(1, 17));
-	Opportunity.setCRMvolunteerpage3Street3(Utilityclass.getTD(1, 18));
-	Opportunity.setCRMvolunteerpage3City1(Utilityclass.getTD(1, 19));
-	Opportunity.setCRMvolunteerpage3State_Province(Utilityclass.getTD(1, 20));
-	Opportunity.setCRMvolunteerpage3ZIP_PostalCode(Utilityclass.getTD(1, 21));
-	Opportunity.setCRMvolunteerpage3Country(Utilityclass.getTD(1, 22));
-	Opportunity.setCRMvolunteerpage3URL(Utilityclass.getTD(1, 23));
-	Opportunity.setCRMvolunteerpage3AccountName(Utilityclass.getTD(1, 24));
-	Thread.sleep(2000);
-	Opportunity.setCRMvolunteerpage3Contact(Utilityclass.getTD(1, 25));
+	Opportunity.clickonCRMvolunteerpage3Contact(driver);
+	
+//	Opportunity.setCRMvolunteerpage3AccountName(Utilityclass.getTD(1, 24));
+	//Thread.sleep(5000);
+//	Opportunity.setCRMvolunteerpage3Contact(Utilityclass.getTD(1, 25));
+	
 	Thread.sleep(2000);
 	Opportunity.setCRMvolunteerpage3Email(Utilityclass.getTD(1, 26));
 	Opportunity.setCRMvolunteerpage3Phone(Utilityclass.getTD(1, 27));
@@ -97,6 +115,8 @@ public void loginToApp() throws IOException, InterruptedException
 	Opportunity.setCRMvolunteerpage3Street(Utilityclass.getTD(1, 30));
 	Opportunity.setCRMvolunteerpage3City(Utilityclass.getTD(1, 31));
 	Opportunity.setCRMvolunteerpage3PostalCode(Utilityclass.getTD(1, 32));
+	Thread.sleep(3000);
+	Opportunity.clickonsave();
 
 }
 	@Test (priority = 3)

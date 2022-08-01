@@ -1,5 +1,7 @@
 package Module1_Donor_Management;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,15 +17,30 @@ public class CRM_login1_page
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void setCRMlogin1page(String UN)
+	public void setCRMlogin1page(String cell)
 	{
-		UserName.sendKeys(UN);
+		UserName.sendKeys(cell);
 	}
 	
 	public void clickCRMloginNextbtn()
 	{
 		clickonNextbtn.click();
 	}
+
+//	public void setCRMlogin1page(CharSequence[] cell) {
+//		// TODO Auto-generated method stub
+//		UserName.sendKeys(cell);
+//	}
+
+//	public void setCRMlogin1page(CharSequence[] cell) {
+//		// TODO Auto-generated method stub
+//		UserName.sendKeys(cell);
+//	}
+//
+//	public void setCRMlogin1page(XSSFCell cell) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 }
 

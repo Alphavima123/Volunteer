@@ -11,8 +11,10 @@ public class CRM_Opportunity_page3
 
 //	@FindBy(xpath = "(//input[@role=\"combobox\"])[4]")private WebElement cause;
 	@FindBy(xpath = "//label[text()='One-time']")private WebElement clickondonationtype;
-	
+	@FindBy(xpath = "//button[@aria-label='Save and continue']")private WebElement clickonsaveandcontinuebtn;
+
 	@FindBy(xpath = "//button[@aria-label='Save (CTRL+S)']")private WebElement clickonsavebtn;
+	
 
 	
 	@FindBy(xpath = "(//div[@title=\"Cultivate\"])[1]")private WebElement clickoncultivate;
@@ -27,6 +29,8 @@ public class CRM_Opportunity_page3
 	@FindBy(xpath = "//button[@aria-label='Next Stage']")private WebElement clicknextbtn;
 	@FindBy(xpath = "//button[@aria-label='Finish']")private WebElement clickfinishbtn;
 	@FindBy(xpath = "//button[@aria-label='Refresh']")private WebElement clickontransionRefresh;
+	@FindBy(xpath = "//button[@aria-label='Close Opportunity']")private WebElement clickonOpportunity;
+
 	
 	public CRM_Opportunity_page3 (WebDriver driver)
 	{
@@ -50,7 +54,10 @@ public class CRM_Opportunity_page3
 		Thread.sleep(2000);
 		clickondonationtype.click();
 	}
-	
+	public void clickonsaveandcontinuebtn()
+	{
+		clickonsaveandcontinuebtn.click();
+	}
 	public void clickonsavebuttonOpportunitypage3() 
 	{
 		clickonsavebtn.click();
@@ -129,7 +136,10 @@ public class CRM_Opportunity_page3
 	{
 		clickontransionRefresh.click();
 	}
-	
+	public void clickonOpportunity()
+	{
+		clickonOpportunity.click();
+	}
 //	public void clickonTtansionRefresh(WebDriver driver)
 //	{
 //		WebElement type = driver.findElement(By.xpath("//button[@aria-label='More commands for Transaction']"));

@@ -22,7 +22,7 @@ public class UtilityclassPortalpage2
 	// Need to pass 2 parameters: 1.rowIndex,2.cellIndex
 	public static String getTD(int rowIndex, int cellIndex) throws EncryptedDocumentException, IOException
 	{
-		FileInputStream file=new FileInputStream("C:\\Users\\MonishSahare\\eclipse-workspace\\Maven\\TestData\\Test Data.xlsx");
+		FileInputStream file=new FileInputStream("C:\\Users\\MonishSahare\\git\\Maven\\TestData\\Test Data.xlsx");
 		 Sheet sh = WorkbookFactory.create(file).getSheet("Portal2");
 		 String value = sh.getRow(rowIndex).getCell(cellIndex).getStringCellValue();
 		 return value;
@@ -35,7 +35,7 @@ public class UtilityclassPortalpage2
 	public static void CaptureScreenShot(WebDriver driver, int TestcaseID) throws IOException
 	{
 		 File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		 File dest = new File("C:\\Users\\MonishSahare\\eclipse-workspace\\Maven\\Screenshot" +TestcaseID+".jpg");
+		 File dest = new File("C:\\Users\\MonishSahare\\git\\Maven\\Screenshot" +TestcaseID+".jpg");
 		 org.openqa.selenium.io.FileHandler.copy(src, dest);
 		 
 	}
@@ -43,7 +43,7 @@ public class UtilityclassPortalpage2
 	// Method for getting the data from property file
 	public static String getDatafromPFile(String key) throws IOException
 	{
-		FileInputStream file=new FileInputStream("C:\\Users\\MonishSahare\\eclipse-workspace\\Maven\\Property.properties");
+		FileInputStream file=new FileInputStream("C:\\Users\\MonishSahare\\git\\Maven\\Property.properties");
 		Properties p=new Properties();
 		p.load(file);
 		

@@ -11,15 +11,17 @@ import org.openqa.selenium.support.PageFactory;
 	public class CRM_VOL_Opportunity_Schedule_page 
 	{
 
-	@FindBy(xpath="//div[@id='AppDetailsSec_1_Item_21']")private WebElement clickonVolunteerMgmt;
+	@FindBy(xpath="(//div[@title='Volunteer Management'])[2]")private WebElement clickonVolunteerMgmt;
 	@FindBy(xpath="//span[text()='Opportunity Schedules']")private WebElement clickonOpportunitiesSchedule;
 	@FindBy(xpath="//button[@aria-label='New']")private WebElement clickonNew;
+	
+//	@FindBy(xpath="(//div[@aria-label='Status Reason'])[2]")private WebElement clickonStatusReason ;
 	@FindBy(xpath="//input[@aria-label='Job Title']")private WebElement JobTitle;
-	@FindBy(xpath="//input[@aria-label='Volunteer Opportunity, Lookup']")private WebElement VolunteerOpportunity;
+//	@FindBy(xpath="//input[@aria-label='Volunteer Opportunity, Lookup']")private WebElement VolunteerOpportunity;
 	
 	@FindBy(xpath="(//i[@data-icon-name='Calendar'])[1]")private WebElement StartDate;	
 	@FindBy(xpath="//button[@aria-label='September']")private WebElement clickonMonth;
-	@FindBy(xpath="//button[@aria-label='28, September, 2022']")private WebElement clickonDate;
+	@FindBy(xpath="//button[@aria-label='29, September, 2022']")private WebElement clickonDate;
 	
 	@FindBy(xpath="(//i[@data-icon-name='Calendar'])[2]")private WebElement EndDate;
 	@FindBy(xpath="//button[@aria-label='September']")private WebElement clickonMonth1;
@@ -53,17 +55,28 @@ import org.openqa.selenium.support.PageFactory;
 	{
 		clickonNew.click();
 	}
+	
 	public void setCRMvolunteerpageJobTitle(String jobTitle)
 	{
 		JobTitle.clear();
 		JobTitle.sendKeys(jobTitle);
 	}
-	public void setCRMvolunteerOpportunity(String volopp) throws InterruptedException
+	public void clickonVolunteeropp(WebDriver driver)
 	{
-		VolunteerOpportunity.clear();
-		Thread.sleep(2000);
-		VolunteerOpportunity.sendKeys(volopp);
+		WebElement Time = driver.findElement(By.xpath("//input[@aria-label='Volunteer Opportunity, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(Time).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();
 	}
+//	public void setCRMvolunteerOpportunity(String volopp) throws InterruptedException
+//	{
+//		VolunteerOpportunity.clear();
+//		Thread.sleep(2000);
+//		VolunteerOpportunity.sendKeys(volopp);
+//	}
 	public void clickonStartdate()
 	{
 		StartDate.click();
@@ -133,9 +146,10 @@ import org.openqa.selenium.support.PageFactory;
 //	{
 //		TimeofEndDate.sendKeys(EndTime);
 //	}
-	public void setCRMvolunteerpageExpectedHours(String exphr)
+	public void setCRMvolunteerpageExpectedHours(String exphr) throws InterruptedException
 	{
 		ExpectedHours.clear();
+		Thread.sleep(2500);
 		ExpectedHours.sendKeys(exphr);
 	}
 	public void clickonWorkingDay()

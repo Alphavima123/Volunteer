@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CRM_Volunteer_Mgmt.CRM_Vol_Opportunity_Schedulepage_Test">
+      <class name="SampleDataCreation_VolunteerMgmt.Volunteer">
         <methods>
-          <include name="loginToApp"/>
+          <include name="RunVolunteer"/>
         </methods>
-      </class> <!-- CRM_Volunteer_Mgmt.CRM_Vol_Opportunity_Schedulepage_Test -->
+      </class> <!-- SampleDataCreation_VolunteerMgmt.Volunteer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,24 +1,30 @@
 package CRM_Volunteer_Mgmt;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 	public class CRM_VOL_Opportunity_page1 
 	{
 
-	@FindBy(xpath="//div[@id='AppDetailsSec_1_Item_21']")private WebElement clickonVolunteerMgmt;
+	@FindBy(xpath="(//div[@title='Volunteer Management'])[2]")private WebElement clickonVolunteerMgmt;
 	@FindBy(xpath="(//div[@class='pa-bj pa-e pa-o pa-ck flexbox'])[5]")private WebElement clickonOpportunities;
 	@FindBy(xpath="//button[@aria-label='New']")private WebElement clickonNew;
+	@FindBy(xpath="//button[@aria-label='More Header Fields']")private WebElement ClickonMoreHeaderFields;
 	@FindBy(xpath="//input[@aria-label='Opportunity Title']")private WebElement clickonTitle;
 	@FindBy(xpath="//textarea[@aria-label='Opportunity Goal']")private WebElement clickonGoal;
 	@FindBy(xpath="//textarea[@aria-label='Opportunity Description']")private WebElement clickonDescription;
 	@FindBy(xpath="//textarea[@aria-label='Opportunity Time Commitment']")private WebElement clickonCommitment;
 	@FindBy(xpath="//textarea[@aria-label='Opportunity Requirement']")private WebElement clickonRequirement;
+	@FindBy(xpath="//input[@type='file']")private WebElement clickonFiles;
+	
 	@FindBy(xpath="//textarea[@aria-label='Opportunity Benefit']")private WebElement clickonBenefit;
 	@FindBy(xpath="//textarea[@aria-label='Opportunity Training']")private WebElement clickonTraining;
-	@FindBy(xpath="//label[text()='Not Required']")private WebElement clickonNotRequired;
+	@FindBy(xpath="//label[text()='Required']")private WebElement clickonRequired;
 	@FindBy(xpath="//label[text()='Self']")private WebElement clickonSelf;
 	@FindBy(xpath="//input[@aria-label='Date of Opportunity Start']")private WebElement clickonOpportunityStart;
 	@FindBy(xpath="//input[@aria-label='Date of Opportunity End']")private WebElement clickonOpportunityEnd;
@@ -28,7 +34,9 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//input[@aria-label='Photo']")private WebElement clickonPhoto;
 	@FindBy(xpath="//input[@aria-label='Video']")private WebElement clickonVideo;
 	@FindBy(xpath="//input[@aria-label='Bitly']")private WebElement clickonBitly;
+	
 	@FindBy(xpath="//div[@aria-label='On Location']")private WebElement clickonLocation;
+	
 	@FindBy(xpath="//input[@class='addressAutocomplete']")private WebElement clickonOnLocationName;
 	@FindBy(xpath="//input[@aria-label='Street 1']")private WebElement clickonStreet1;
 	@FindBy(xpath="//input[@aria-label='Street 2']")private WebElement clickonStreet2;
@@ -37,8 +45,11 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//input[@aria-label='State/Province']")private WebElement clickonState_Province;
 	@FindBy(xpath="//input[@aria-label='ZIP/Postal Code']")private WebElement clickonZIP_PostalCode;
 	@FindBy(xpath="//input[@aria-label='Country']")private WebElement clickonCountry;
-//	@FindBy(xpath="//input[@aria-label='Account Name, Lookup']")private WebElement clickonAccountName;
-//	@FindBy(xpath="//input[@aria-label='Contact, Lookup']")private WebElement clickonContact;
+	
+	@FindBy(xpath="//button[@aria-label='Save (CTRL+S)']")private WebElement Save;
+
+	@FindBy(xpath="//input[@type='file']")private WebElement clickonfile;
+	@FindBy(xpath="//span[text()='Refresh']")private WebElement clickonRefresh;
 //	@FindBy(xpath="//input[@aria-label='Email']")private WebElement clickonEmail;
 //	@FindBy(xpath="//input[@aria-label='Phone']")private WebElement clickonPhone;
 //	@FindBy(xpath="//input[@aria-label='Extension']")private WebElement clickonExtension;
@@ -66,6 +77,18 @@ import org.openqa.selenium.support.PageFactory;
 	public void clickonNew()
 	{
 		clickonNew.click();
+	}
+	public void ClickonMoreHeaderFields()
+	{
+		ClickonMoreHeaderFields.click();
+	}
+	public void clickonStatusReason(WebDriver driver)
+	{
+		WebElement Time = driver.findElement(By.xpath("(//div[@aria-label='Status Reason'])[2]"));
+		Actions act=new Actions(driver);
+		act.click(Time).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();
 	}
 	public void setCRMvolunteerpage1Title(String title)
 	{
@@ -102,10 +125,13 @@ import org.openqa.selenium.support.PageFactory;
 		clickonTraining.clear();
 		clickonTraining.sendKeys(Training);
 	}
-	public void clickonNotRequired()
+	public void clickonRequired()
+	{	
+		clickonRequired.click();
+	}
+	public void clickonFiles()
 	{
-		
-		clickonNotRequired.click();
+		clickonFiles.click();
 	}
 	public void clickonSelf()
 	{
@@ -114,11 +140,11 @@ import org.openqa.selenium.support.PageFactory;
 	}
 	public void setCRMvolunteerpage1Startdate(String username)
 	{
-		clickonOpportunityStart.sendKeys("6/29/2022");
+		clickonOpportunityStart.sendKeys("9/29/2022");
 	}
 	public void setCRMvolunteerpage1Enddate(String username)
 	{
-		clickonOpportunityEnd.sendKeys("6/30/2022");
+		clickonOpportunityEnd.sendKeys("9/30/2022");
 	}
 	public void setCRMvolunteerpage1Facebook(String Facebook)
 	{
@@ -193,6 +219,18 @@ import org.openqa.selenium.support.PageFactory;
 	{
 		clickonCountry.clear();
 		clickonCountry.sendKeys(Country);
+	}
+	public void clickonsave()
+	{
+		Save.click();
+	}
+	public void clickonfile()
+	{
+		clickonfile.click();
+	}
+	public void clickonRefresh()
+	{
+		clickonRefresh.click();
 	}
 	
 	}

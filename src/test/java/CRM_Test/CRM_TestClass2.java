@@ -84,11 +84,15 @@ public class CRM_TestClass2 extends Baseclass
 		
 		Prospect.setCRMProspectpage2BusinessPhoneeXT(Utilityclass_CRM_page.getTD(2, 8));
 		Prospect.setCRMProspectpage2Mobilephone(Utilityclass_CRM_page.getTD(2, 9));
-		Prospect.setCRMprospectypage2cause("cause");
+//		Prospect.setCRMprospectypage2cause("cause");
+		Prospect.clickoncause(driver);
+		Prospect.clickonTimeframe(driver);
+		Prospect.setCRMpropspectDescription(CRM_Module.Utilityclass_CRM_page.getTD(2, 14));
+	
 		Thread.sleep(4000);
 		Prospect.clickonsaveprospectpage2();
 		Prospect.clickonqualifyprospectpage2();
-		Prospect.clickonpopupprospectpage2();
+		Prospect.clickonOK();
 	//	Thread.sleep(2000);
 	//	Opportunity.setCRMopportunitypagecause("cause");
 		Thread.sleep(3000);
@@ -125,6 +129,16 @@ public class CRM_TestClass2 extends Baseclass
 	//	Opportunity.clickonThankyou(driver);
 		Opportunity.clickonFinishOpportunitypage2();
 		Opportunity.clickonTransionRefreshOpportunitypage2();
+		
+//		Opportunity.clickonTransion();
+//		Opportunity.setCRMopportunitypageclickonReceivedDate("date");
+//		Opportunity.clickonsavebuttonOpportunitypage2();
+//		Opportunity.clickonMoreHeader();
+//		Opportunity.clickonStatusReason(driver);
+//		Opportunity.clickonsavebuttonOpportunitypage2();
+//		Thread.sleep(3000);
+//		Opportunity.clickonBack();
+//		Opportunity.clickonOpportunity();
 		
 		
 			

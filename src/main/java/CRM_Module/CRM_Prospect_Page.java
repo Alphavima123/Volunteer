@@ -1,8 +1,10 @@
 package CRM_Module;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -24,11 +26,11 @@ public class CRM_Prospect_Page
     @FindBy(xpath ="//input[@aria-label='Business Phone Ext.']") private WebElement BusinessPhoneExt; 
     @FindBy(xpath ="//input[@aria-label='Mobile Phone']") private WebElement Mobilephone; 
     
-    @FindBy(xpath = "//input[@aria-label='Cause, Lookup']")private WebElement causebutton;
+    @FindBy(xpath = "//input[@aria-label='Description']")private WebElement Description;
     
 	@FindBy(xpath = "//button[@aria-label='Save (CTRL+S)']")private WebElement clickonsave;
 	@FindBy(xpath = "//button[@title='Qualify']")private WebElement clickonqualify;
-	@FindBy(xpath = "//button[@id='confirmButton']")private WebElement clickonpopup;
+	@FindBy(xpath = "//button[@aria-label='OK']")private WebElement clickonOK;
 	
 	public CRM_Prospect_Page (WebDriver driver)
 	{
@@ -64,8 +66,9 @@ public class CRM_Prospect_Page
 		clickonindividual.click();
 	}
 	
-	public void setCRMProspectpage(String est)
+	public void setCRMProspectpage(String est) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		estimated.clear();
 		estimated.sendKeys(est);
 	}
@@ -94,6 +97,7 @@ public class CRM_Prospect_Page
 	//	FirstName.sendKeys("shohan");
 	//	Thread.sleep(2000);
 		FirstName.clear();
+	//	Thread.sleep(1000);
 		FirstName.sendKeys(Fname);
 		
 	}
@@ -102,12 +106,14 @@ public class CRM_Prospect_Page
 	//	LastName.sendKeys("Ramteke");
 	//	Thread.sleep(2000);
 		LastName.clear();
+	//	Thread.sleep(1000);
 		LastName.sendKeys(Lname);
 	}
 	
-	public void setCRMPositionTitle(String Ptitle)
+	public void setCRMPositionTitle(String Ptitle) throws InterruptedException
 	{
 		PositionTitle.clear();
+	//	Thread.sleep(2000);
 		PositionTitle.sendKeys(Ptitle);
 	}
 	
@@ -116,43 +122,51 @@ public class CRM_Prospect_Page
 	//	EmailId.sendKeys("shohanramteke@gmail.com");
 	//	Thread.sleep(2000);
 		EmailId.clear();
+	//	Thread.sleep(2000);
 		EmailId.sendKeys(EID);
 	}
 	
-	public void setCRMProspectpageBusinessPhone(String BPhone)
+	public void setCRMProspectpageBusinessPhone(String BPhone) throws InterruptedException
 	{
 		BusinessPhone.clear();
+	//	Thread.sleep(2000);
 		BusinessPhone.sendKeys(BPhone);
 	}
 	
-	public void setCRMProspectpageBusinessPhoneeXT(String BPhoneExt)
+	public void setCRMProspectpageBusinessPhoneeXT(String BPhoneExt) throws InterruptedException
 	{
 		BusinessPhoneExt.clear();
+	//	Thread.sleep(2000);
 		BusinessPhoneExt.sendKeys(BPhoneExt);
 	}
 	
-	public void setCRMProspectpageMobilephone(String Mphone)
+	public void setCRMProspectpageMobilephone(String Mphone) throws InterruptedException
 	{
 		Mobilephone.clear();
+	//	Thread.sleep(2000);
 		Mobilephone.sendKeys(Mphone);
 	}
-	
-//	public void clickonCause(WebDriver driver)
-//	{
-//		WebElement cause = driver.findElement(By.xpath("//input[@aria-autocomplete='list']"));
-//		Actions act=new Actions(driver);
-//		act.click(cause).perform();
-//		act.sendKeys(Keys.ARROW_DOWN).perform();
-//		act.sendKeys(Keys.ARROW_DOWN).perform();
-//		act.sendKeys(Keys.ENTER).perform();
-//		
-//	}
-	
-	public void setCRMProspectpagecause(String cause) throws InterruptedException {
-		causebutton.clear();
-		Thread.sleep(2000);
-		causebutton.sendKeys("Environment");
+	public void clickoncause(WebDriver driver)
+	{
+		WebElement cause = driver.findElement(By.xpath("//input[@aria-label='Cause, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(cause).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();		
 	}
+	public void clickonTimeframe(WebDriver driver)					
+	{
+		WebElement type = driver.findElement(By.xpath("//select[@aria-label='Timeframe']"));
+		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
+	s.selectByIndex(4);
+	}
+	public void setCRMpropspectDescription(String discription)
+	{
+		Description.sendKeys(discription);
+	}
+	
 	public void clickonsave()
 	{
 		clickonsave.click();
@@ -161,10 +175,11 @@ public class CRM_Prospect_Page
 	{
 		clickonqualify.click();
 	}
-	public void clickonpopup()
+	public void clickonOK()
 	{
-		clickonpopup.click();
+		clickonOK.click();
 	}
+
 
 	
 }

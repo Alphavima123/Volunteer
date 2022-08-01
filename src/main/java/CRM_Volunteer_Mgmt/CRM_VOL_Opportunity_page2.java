@@ -1,14 +1,17 @@
 package CRM_Volunteer_Mgmt;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 	public class CRM_VOL_Opportunity_page2 
 	{
 
-	@FindBy(xpath="//div[@id='AppDetailsSec_1_Item_21']")private WebElement clickonVolunteerMgmt;
+	@FindBy(xpath="(//div[@title='Volunteer Management'])[2]")private WebElement clickonVolunteerMgmt;
 	@FindBy(xpath="(//div[@class='pa-bj pa-e pa-o pa-ck flexbox'])[5]")private WebElement clickonOpportunities;
 	@FindBy(xpath="//button[@aria-label='New']")private WebElement clickonNew;
 	@FindBy(xpath="//input[@aria-label='Opportunity Title']")private WebElement clickonTitle;
@@ -38,8 +41,10 @@ import org.openqa.selenium.support.PageFactory;
 //	@FindBy(xpath="//input[@aria-label='State/Province']")private WebElement clickonState_Province;
 //	@FindBy(xpath="//input[@aria-label='ZIP/Postal Code']")private WebElement clickonZIP_PostalCode;
 //	@FindBy(xpath="//input[@aria-label='Country']")private WebElement clickonCountry;
-	@FindBy(xpath="//input[@aria-label='Account Name, Lookup']")private WebElement clickonAccountName;
-	@FindBy(xpath="//input[@aria-label='Contact, Lookup']")private WebElement clickonContact;
+	
+//	@FindBy(xpath="//input[@aria-label='Account Name, Lookup']")private WebElement clickonAccountName;
+//	@FindBy(xpath="//input[@aria-label='Contact, Lookup']")private WebElement clickonContact;
+	
 	@FindBy(xpath="//input[@aria-label='Email']")private WebElement clickonEmail;
 	@FindBy(xpath="//input[@aria-label='Phone']")private WebElement clickonPhone;
 	@FindBy(xpath="//input[@aria-label='Extension']")private WebElement clickonExtension;
@@ -47,6 +52,7 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//textarea[@aria-label='Street']")private WebElement clickonStreet;
 	@FindBy(xpath="//input[@aria-label='City']")private WebElement clickonCity;
 	@FindBy(xpath="//input[@aria-label='Postal Code']")private WebElement clickonOnPostalCode;
+	@FindBy(xpath="//button[@aria-label='Save (CTRL+S)']")private WebElement Save;
 	
 
 	
@@ -107,11 +113,11 @@ import org.openqa.selenium.support.PageFactory;
 	}
 	public void setCRMvolunteerpage2Startdate(String username)
 	{
-		clickonOpportunityStart.sendKeys("6/29/2022");
+		clickonOpportunityStart.sendKeys("11/29/2022");
 	}
 	public void setCRMvolunteerpage2Enddate(String username)
 	{
-		clickonOpportunityEnd.sendKeys("6/30/2022");
+		clickonOpportunityEnd.sendKeys("11/30/2022");
 	}
 	public void setCRMvolunteerpage2Facebook(String Facebook)
 	{
@@ -143,20 +149,40 @@ import org.openqa.selenium.support.PageFactory;
 	}
 	public void setCRMvolunteerpage2URL(String URL)
 	{
-		clickonURL.clear();
+	//	clickonURL.clear();
 		clickonURL.sendKeys(URL);
 	}
-	
-	public void setCRMvolunteerpage2AccountName(String AccountName)
+	public void clickonCRMvolunteerpage3AccountName(WebDriver driver)
 	{
-		clickonAccountName.clear();
-		clickonAccountName.sendKeys(AccountName);
+		WebElement AccountName = driver.findElement(By.xpath("//input[@aria-label='Account Name, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(AccountName).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();
+
 	}
-	public void setCRMvolunteerpage2Contact(String Contact)
+
+	public void clickonCRMvolunteerpage3Contact(WebDriver driver)
 	{
-		clickonContact.clear();
-		clickonContact.sendKeys(Contact);
+		WebElement Contact = driver.findElement(By.xpath("//input[@aria-label='Contact, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(Contact).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();
+
 	}
+//	public void setCRMvolunteerpage2AccountName(String AccountName)
+//	{
+//		clickonAccountName.clear();
+//		clickonAccountName.sendKeys(AccountName);
+//	}
+//	public void setCRMvolunteerpage2Contact(String Contact)
+//	{
+//		clickonContact.clear();
+//		clickonContact.sendKeys(Contact);
+//	}
 	public void setCRMvolunteerpage2Email(String Email)
 	{
 		clickonEmail.sendKeys(Email);
@@ -184,6 +210,10 @@ import org.openqa.selenium.support.PageFactory;
 	public void setCRMvolunteerpage2PostalCode(String PostalCode)
 	{
 		clickonOnPostalCode.sendKeys(PostalCode);
+	}
+	public void clickonsave()
+	{
+		Save.click();
 	}
 	
 	}

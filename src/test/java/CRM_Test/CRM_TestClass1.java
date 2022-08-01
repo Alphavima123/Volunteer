@@ -84,11 +84,15 @@ public class CRM_TestClass1 extends Baseclass
 		
 		Prospect.setCRMProspectpage1BusinessPhoneeXT(Utilityclass_CRM_page.getTD(2, 8));
 		Prospect.setCRMProspectpage1Mobilephone(Utilityclass_CRM_page.getTD(2, 9));
-		Prospect.setCRMprospectypage1cause("cause");
+	//	Prospect.setCRMprospectypage1cause("cause");
+		Prospect.clickoncause(driver);
+		Prospect.clickonTimeframe(driver);
+		Prospect.setCRMpropspectDescription(CRM_Module.Utilityclass_CRM_page.getTD(2, 14));
 		Thread.sleep(4000);
 		Prospect.clickonsaveprospectpage1();
 		Prospect.clickonqualifyprospectpage1();
-		Prospect.clickonpopupprospectpage1();
+	//	Prospect.clickonpopupprospectpage1();
+		Prospect.clickonOK();
 	//	Thread.sleep(2000);
 	//	Opportunity.setCRMopportunitypagecause("cause");
 		Thread.sleep(3000);
@@ -106,10 +110,10 @@ public class CRM_TestClass1 extends Baseclass
 		Opportunity.clickoncultivatebtnOpportunitypage1();
 		Thread.sleep(1000);
 		Opportunity.clickonnextstagebtnOpportunitypage1();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		Opportunity.clickonRefreshbuttonOpportunitypage1();
-		Thread.sleep(3000);
-		Opportunity.setCRMopportunitypage1payment("Firstpaymentduedate");
+		Thread.sleep(5000);
+	//	Opportunity.setCRMopportunitypage1payment("Firstpaymentduedate");
 		
 		Opportunity.clickonsolicitbuttonOpportunitypage1();
 		
@@ -122,6 +126,16 @@ public class CRM_TestClass1 extends Baseclass
 	//	Opportunity.clickonThankyou(driver);
 		Opportunity.clickonFinishOpportunitypage1();
 		Opportunity.clickonTransionRefreshOpportunitypage1();
+		
+		Opportunity.clickonTransion();
+		Opportunity.setCRMopportunitypageclickonReceivedDate("date");
+		Opportunity.clickonsavebuttonOpportunitypage1();
+		Opportunity.clickonMoreHeader();
+		Opportunity.clickonStatusReason(driver);
+		Opportunity.clickonsavebuttonOpportunitypage1();
+		Thread.sleep(3000);
+		Opportunity.clickonBack();
+		Opportunity.clickonOpportunity();
 		
 		
 			

@@ -1,8 +1,10 @@
 package CRM_Module;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,7 +20,7 @@ public class CRM_Opportunity_page1
 
 	
 	@FindBy(xpath = "//button[@aria-label='Save (CTRL+S)']")private WebElement clickonsavebtn;
-	@FindBy(xpath = "//label[text()='Quaterly']")private WebElement clickondonationtypeQuaterly;
+	@FindBy(xpath = "//div[@aria-label='Quarterly']")private WebElement clickondonationtypeQuaterly;
 
 //	@FindBy(xpath = "//button[@aria-label=\"Increment value\"]")private WebElement clickonMultipletime;
 	
@@ -34,6 +36,11 @@ public class CRM_Opportunity_page1
 	@FindBy(xpath = "//button[@aria-label='Next Stage']")private WebElement clicknextbtn;
 	@FindBy(xpath = "//button[@aria-label='Finish']")private WebElement clickfinishbtn;
 	@FindBy(xpath = "//button[@aria-label='Refresh']")private WebElement clickontransionRefresh;
+	@FindBy(xpath = "(//div[@role='gridcell'])[2]")private WebElement clickonTransion;
+	@FindBy(xpath = "//input[@aria-label='Date of Received Date']")private WebElement clickonReceivedDate;
+	@FindBy(xpath = "//button[@aria-label='More Header Fields']")private WebElement clickonMoreHeader;
+	@FindBy(xpath = "//button[@aria-label='Press Enter to go back.']")private WebElement clickonBack;
+	@FindBy(xpath = "//button[@aria-label='Close Opportunity']")private WebElement clickonOpportunity;
 	
 	public CRM_Opportunity_page1 (WebDriver driver)
 	{
@@ -171,5 +178,34 @@ public class CRM_Opportunity_page1
 //		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
 //		s.selectByIndex(2);	
 //	}
-	
+	public void clickonTransion()
+	{
+		clickonTransion.click();
+	}
+	public void setCRMopportunitypageclickonReceivedDate(String username)
+	{
+		//paymentduedate.clear();
+		clickonReceivedDate.sendKeys("10/28/2022");
+	}
+	public void clickonMoreHeader()
+	{
+		clickonMoreHeader.click();
+	}
+	public void clickonStatusReason(WebDriver driver)
+	{
+		WebElement cause = driver.findElement(By.xpath("(//div[@aria-label='Status Reason'])[1]"));
+		Actions act=new Actions(driver);
+		act.click(cause).perform();
+		act.sendKeys(Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.ENTER).perform();		
+	}
+	public void clickonBack()
+	{
+		clickonBack.click();
+	}
+	public void clickonOpportunity()
+	{
+		clickonOpportunity.click();
+	}
 }

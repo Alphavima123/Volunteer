@@ -1,15 +1,20 @@
 package CRM_Module;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CRM_Opportunity_page 
 {
+	@FindBy(xpath = "(//input[@aria-label='Date of Introductory Meeting'])[1]")private WebElement IntroductoryMeeting;
+	@FindBy(xpath = "//label[text()='Moderate']")private WebElement clickonModerate;
+	@FindBy(xpath = "//button[@aria-label='Anonymity: No']")private WebElement clickonAnonymity;
 
-//	@FindBy(xpath = "(//input[@role=\"combobox\"])[4]")private WebElement cause;
+	@FindBy(xpath = "//button[@aria-label='Save and continue']")private WebElement Clickonsaveandcontinue;
 	@FindBy(xpath = "//label[text()='One-time']")private WebElement clickondonationtype;
 	
 	@FindBy(xpath = "//button[@aria-label='Save (CTRL+S)']")private WebElement clickonsavebtn;
@@ -27,12 +32,39 @@ public class CRM_Opportunity_page
 	@FindBy(xpath = "//button[@aria-label='Next Stage']")private WebElement clicknextbtn;
 	@FindBy(xpath = "//button[@aria-label='Finish']")private WebElement clickfinishbtn;
 	@FindBy(xpath = "//button[@aria-label='Refresh']")private WebElement clickontransionRefresh;
+	@FindBy(xpath = "(//div[@role='gridcell'])[2]")private WebElement clickonTransion;
+	@FindBy(xpath = "//input[@aria-label='Date of Received Date']")private WebElement clickonReceivedDate;
+	@FindBy(xpath = "//button[@aria-label='More Header Fields']")private WebElement clickonMoreHeader;
+	@FindBy(xpath = "//button[@aria-label='Press Enter to go back.']")private WebElement clickonBack;
+	@FindBy(xpath = "//button[@aria-label='Close Opportunity']")private WebElement clickonOpportunity;
+	
 	
 	public CRM_Opportunity_page (WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
+	public void setCRMopportunityIntroductoryMeeting(String Imeeting)
+	{
+		IntroductoryMeeting.sendKeys("10/20/2022");
+	}
+	public void clickonEngmentlavel()
+	{
+		clickonModerate.click();
+	}
+	public void clickonAnonymity()
+	{
+		clickonAnonymity.click();
+	}
+	public void Clickonsaveandcontinue()
+	{
+		Clickonsaveandcontinue.click();
+	}
+//	public void clickopportunityEngmentLavel(WebDriver driver)
+//	{
+//		WebElement type = driver.findElement(By.xpath("//select[@aria-label='Engagement Level']"));
+//		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
+//		s.selectByIndex(1);
+//	}
 //	public void setCRMopportunitypagecause(String username) throws InterruptedException
 //	{
 ////		WebElement type = driver.findElement(By.xpath("(//input[@role=\"combobox\"])[4]"));
@@ -72,7 +104,8 @@ public class CRM_Opportunity_page
 	
 	public void setCRMopportunitypagepayment(String username)
 	{
-		paymentduedate.sendKeys("10/25/2022");
+		paymentduedate.clear();
+		paymentduedate.sendKeys("10/24/2022");
 	}
 	
 	public void clickonsolicitbutton()
@@ -129,7 +162,36 @@ public class CRM_Opportunity_page
 	{
 		clickontransionRefresh.click();
 	}
-	
+	public void clickonTransion()
+	{
+		clickonTransion.click();
+	}
+	public void setCRMopportunitypageclickonReceivedDate(String username)
+	{
+		//paymentduedate.clear();
+		clickonReceivedDate.sendKeys("10/28/2022");
+	}
+	public void clickonMoreHeader()
+	{
+		clickonMoreHeader.click();
+	}
+	public void clickonStatusReason(WebDriver driver)
+	{
+		WebElement cause = driver.findElement(By.xpath("(//div[@aria-label='Status Reason'])[1]"));
+		Actions act=new Actions(driver);
+		act.click(cause).perform();
+		act.sendKeys(Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.ENTER).perform();		
+	}
+	public void clickonBack()
+	{
+		clickonBack.click();
+	}
+	public void clickonOpportunity()
+	{
+		clickonOpportunity.click();
+	}
 //	public void clickonTtansionRefresh(WebDriver driver)
 //	{
 //		WebElement type = driver.findElement(By.xpath("//button[@aria-label='More commands for Transaction']"));

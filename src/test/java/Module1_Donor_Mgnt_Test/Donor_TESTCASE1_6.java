@@ -45,7 +45,7 @@ public class Donor_TESTCASE1_6 extends Baseclass_Portal_page
 	public void FillInfo() throws EncryptedDocumentException, IOException
 	{
 		TestcaseID=100;
-		
+		login.clickonDonate();
 		login.clickDonorLoginPageDmonthly();
 		login.clickDonorLoginPageDAmount();
     	login.clickDonorLoginPageCFund(); 

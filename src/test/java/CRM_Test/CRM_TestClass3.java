@@ -51,7 +51,7 @@ public class CRM_TestClass3 extends Baseclass
 		
 		login1.setCRMlogin1page(Utilityclass_CRM_page.getTD(1, 0));
 		login1.clickCRMloginNextbtn();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		login2.setCRMlogin2page(Utilityclass_CRM_page.getTD(1, 1));
 		login2.clickCRMloginSignbtn();
 		login2.clickCRMonPopup();
@@ -79,49 +79,68 @@ public class CRM_TestClass3 extends Baseclass
 		
 		Prospect.setCRMPositionTitleProspectpage3(Utilityclass_CRM_page.getTD(1, 5));
 		
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Prospect.setCRMProspectpage3Emailid(Utilityclass_CRM_page.getTD(1, 6));
+		Thread.sleep(1000);
 		Prospect.setCRMProspectpage3BusinessPhone(Utilityclass_CRM_page.getTD(1, 7));
-		
+		Thread.sleep(1000);
 		Prospect.setCRMProspectpage3BusinessPhoneeXT(Utilityclass_CRM_page.getTD(1, 8));
+		Thread.sleep(2000);
 		Prospect.setCRMProspectpage3Mobilephone(Utilityclass_CRM_page.getTD(1, 9));
-		Prospect.setCRMProspectpage3cause("cause");
+//		Prospect.setCRMProspectpage3cause("cause");
+		Prospect.clickoncause(driver);
 		Thread.sleep(3000);
 		Prospect.setNeworgaizationProspectpage3(Utilityclass_CRM_page.getTD(1, 11));
+		Thread.sleep(2000);
 		Prospect.setNeworgaizationphonenoProspectpage3(Utilityclass_CRM_page.getTD(1, 12));
+		Thread.sleep(3000);
 		Prospect.setNeworgaizationEmailProspectpage3(Utilityclass_CRM_page.getTD(1, 13));
 		Thread.sleep(4000);
 		Prospect.clickonsaveProspectpage3();
+		Thread.sleep(2000);
 		Prospect.clickonqualifyProspectpage3();
-		Prospect.clickonpopupProspectpage3();
+		Thread.sleep(2000);
+		Prospect.clickonOK();
+		Thread.sleep(2000);
+	//	Prospect.clickonsaveandcontinuebtn();
+	//	Prospect.clickonpopupProspectpage3();
 	//	Thread.sleep(2000);
 	//	Opportunity.setCRMopportunitypagecause("cause");
 		Thread.sleep(3000);
 		Opportunity.clickondonationtypeOpportunitypage3();
-		
+		Thread.sleep(2000);
+		Opportunity.clickonsaveandcontinuebtn();
+		Thread.sleep(2000);
 		Opportunity.clickonsavebuttonOpportunitypage3();
 		
 		Thread.sleep(3000);
 		Opportunity.clickoncultivatebtnOpportunitypage3();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Opportunity.clickonnextstagebtnOpportunitypage3();
 		Thread.sleep(3000);
 		Opportunity.clickonRefreshbuttonOpportunitypage3();
 		Thread.sleep(3000);
-		Opportunity.setCRMopportunitypage3payment("Paymentduedate");
-		
+	//	Opportunity.setCRMopportunitypage3payment("Paymentduedate");
+	//	Thread.sleep(2000);
 		Opportunity.clickonsolicitbuttonOpportunitypage3();
-		
+		Thread.sleep(2000);
 		Opportunity.clickonRedinessOpportunitypage3(driver);
+		Thread.sleep(2000);
 		Opportunity.clickonrequestfordonationOpportunitypage3(driver);
+		Thread.sleep(2000);
 		Opportunity.clickonconcernOpportunitypage3(driver);
+		Thread.sleep(2000);
 		Opportunity.clickonnextbtnOpportunitypage3();
+		Thread.sleep(2000);
 		Opportunity.clickonMarketinglistOpportunitypage3(driver);
+		Thread.sleep(2000);
 		Opportunity.clickonPaymentrecivedOpportunitypage3(driver);
+		Thread.sleep(2000);
 	//	Opportunity.clickonThankyou(driver);
 		Opportunity.clickonFinishOpportunitypage3();
+		Thread.sleep(1000);
 		Opportunity.clickonTransionRefreshOpportunitypage3();
-		
+		Opportunity.clickonOpportunity();
 		
 			
 	}

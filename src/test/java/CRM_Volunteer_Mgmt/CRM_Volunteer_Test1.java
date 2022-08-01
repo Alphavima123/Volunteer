@@ -38,6 +38,8 @@ public void loginToApp() throws IOException, InterruptedException
 	Opportunity.clickonVolunteerAap(driver);
 	Opportunity.clickonOpprotunities();
 	Opportunity.clickonNew();
+	Opportunity.ClickonMoreHeaderFields();
+	Opportunity.clickonStatusReason(driver);
 	Thread.sleep(3000);
 	Opportunity.setCRMvolunteerpage1Title(Utilityclass.getTD(1, 2));
 	Opportunity.setCRMvolunteerpage1Goal(Utilityclass.getTD(1, 3));
@@ -46,7 +48,6 @@ public void loginToApp() throws IOException, InterruptedException
 	Opportunity.setCRMvolunteerpage1Requirement(Utilityclass.getTD(1, 6));
 	Opportunity.setCRMvolunteerpage1Benefit(Utilityclass.getTD(1, 7));
 	Opportunity.setCRMvolunteerpage1Training(Utilityclass.getTD(1, 8));
-	Opportunity.clickonNotRequired();
 	Opportunity.clickonSelf();
 	Opportunity.setCRMvolunteerpage1Startdate("Start date");
 	Opportunity.setCRMvolunteerpage1Enddate("End date");
@@ -63,7 +64,10 @@ public void loginToApp() throws IOException, InterruptedException
 	Thread.sleep(1500);
 	Opportunity.setCRMvolunteerpage1Bitly(Utilityclass.getTD(1, 14));
 	Thread.sleep(1500);
+	Opportunity.clickonsave();
 	Thread.sleep(5000);
+	Opportunity.clickonRefresh();
+	Thread.sleep(1500);
 	Opportunity.clickonLocationType();
 	Thread.sleep(3000);
 	Opportunity.setCRMvolunteerpage1LocationName(Utilityclass.getTD(1, 15));
@@ -74,6 +78,14 @@ public void loginToApp() throws IOException, InterruptedException
 	Opportunity.setCRMvolunteerpage1State_Province(Utilityclass.getTD(1, 20));
 	Opportunity.setCRMvolunteerpage1ZIP_PostalCode(Utilityclass.getTD(1, 21));
 	Opportunity.setCRMvolunteerpage1Country(Utilityclass.getTD(1, 22));
+	
+	Opportunity.clickonsave();
+	Thread.sleep(1000);
+	Opportunity.clickonRequired();
+//	Thread.sleep(3000);
+//	Opportunity.clickonfile();
+	Thread.sleep(10000);
+	Opportunity.clickonsave();
 //	Opportunity.setCRMvolunteerpageAccountName(Utilityclass.getTD(1, 24));
 //	Thread.sleep(2000);
 //	Opportunity.setCRMvolunteerpageContact(Utilityclass.getTD(1, 25));

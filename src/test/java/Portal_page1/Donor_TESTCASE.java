@@ -45,29 +45,26 @@ public class Donor_TESTCASE extends Baseclass_Portal_page
 	public void FillInfo() throws EncryptedDocumentException, IOException
 	{
 		TestcaseID=100;
-		
+		login.clickonDonate();
 		login.clickDonorLoginPageDNow();
 		login.clickDonorLoginPageDAmount();
     	login.clickDonorLoginPageCFund(); 
     	login.clickoncause(driver);
-   
-    	login.setDonorLoginPageFname(Utilityclass.getTD(2, 0));
-  //  	Reporter.log(setDonorLoginPageFname,true);
-//		login.setDonorLoginPageFname(Utilityclass.getTD(1, 0));
-		login.setDonorLoginPageLname(Utilityclass.getTD(2, 1));
-		login.setDonorLoginPageEmail(Utilityclass.getTD(2, 2));						// set-->input enter, click-->for click to perform action
-		login.setDonorLoginPageNumber(Utilityclass.getTD(2, 3));
-		login.setDonorLoginPageAddress(Utilityclass.getTD(2, 7));
-		login.setDonorLoginPageAddress1(Utilityclass.getTD(2, 8));
-		login.setDonorLoginPageCity(Utilityclass.getTD(2, 10));
-		login.setDonorLoginPagecountry(Utilityclass.getTD(2, 11));
-		login.setDonorLoginPageState(Utilityclass.getTD(2, 12));
-		login.setDonorLoginPagecode(Utilityclass.getTD(2, 13));
+		login.setDonorLoginPageFname(Utilityclass.getTD(1, 0));
+		login.setDonorLoginPageLname(Utilityclass.getTD(1, 1));
+		login.setDonorLoginPageEmail(Utilityclass.getTD(1, 2));						// set-->input enter, click-->for click to perform action
+		login.setDonorLoginPageNumber(Utilityclass.getTD(1, 3));
+		login.setDonorLoginPageAddress(Utilityclass.getTD(1, 7));
+		login.setDonorLoginPageAddress1(Utilityclass.getTD(1, 8));
+		login.setDonorLoginPageCity(Utilityclass.getTD(1, 10));
+		login.setDonorLoginPagecountry(Utilityclass.getTD(1, 11));
+		login.setDonorLoginPageState(Utilityclass.getTD(1, 12));
+		login.setDonorLoginPagecode(Utilityclass.getTD(1, 13));
 		
-		login.setDonorLoginPagecard(Utilityclass.getTD(2, 14));
+		login.setDonorLoginPagecard(Utilityclass.getTD(1, 14));
 		login.clickonyear(driver);
 		login.clickonmonth(driver);
-		login.setDonorLoginPagecvv(Utilityclass.getTD(2, 15));
+		login.setDonorLoginPagecvv(Utilityclass.getTD(1, 15));
 		
 		login.clickDonorLoginPageSubmit();
 				
@@ -87,7 +84,7 @@ public class Donor_TESTCASE extends Baseclass_Portal_page
 	public void closeBrowser() throws InterruptedException 
 	{	
 		Thread.sleep(5000);
-		//driver.close();
+	//	driver.close();
 		login=null;				//clear all global variable to null--> to clear the garbage collector
 		sh=null;
 		driver=null;		

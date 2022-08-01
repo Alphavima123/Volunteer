@@ -14,11 +14,11 @@ public class Baseclass_Portal_page
 	@SuppressWarnings("deprecation")
 	public void initilizeBrowser() throws IOException 
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MonishSahare\\eclipse-workspace\\Maven\\Browser\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MonishSahare\\git\\Maven\\Browser\\chromedriver.exe");
 		
 		 driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://gl3qa.powerappsportals.com/donate/");
+		driver.get("https://qaportal1.powerappsportals.com/");
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 	}
 }

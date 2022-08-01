@@ -15,11 +15,11 @@ public	WebDriver driver;
 	@SuppressWarnings("deprecation")
 	public void initilizeBrowser() throws IOException 
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MonishSahare\\eclipse-workspace\\Maven\\Browser\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MonishSahare\\git\\Maven\\Browser\\chromedriver.exe");
 		
 		 driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(Utilityclass.getDatafromPFile("URL"));
-		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 }

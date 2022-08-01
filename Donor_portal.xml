@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Portal_page1.Donor_TESTCASE"/>
+      <class name="Portal_page1.Donor_TESTCASE1_10"/>
+      <class name="Portal_page1.Donor_TESTCASE1_1"/>
+      <class name="Portal_page1.Donor_TESTCASE1_2"/>
+      <class name="Portal_page1.Donor_TESTCASE1_3"/>
+      <class name="Portal_page1.Donor_TESTCASE1_4"/>
+      <class name="Portal_page1.Donor_TESTCASE1_5"/>
+      <class name="Portal_page1.Donor_TESTCASE1_6"/>
+      <class name="Portal_page1.Donor_TESTCASE1_7"/>
+      <class name="Portal_page1.Donor_TESTCASE1_8"/>
+      <class name="Portal_page1.Donor_TESTCASE1_9"/>
+      <class name="Portal_page1.Donor_TESTCASE1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

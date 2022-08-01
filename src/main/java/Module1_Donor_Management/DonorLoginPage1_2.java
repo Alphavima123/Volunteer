@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 public class DonorLoginPage1_2 
 {
 //1
+	@FindBy(xpath="//a[text()='Donate']") private WebElement Donate;
+
 	@FindBy(xpath="//label[@for='donatenow']") private WebElement DonateNow;
     @FindBy(xpath="//button[@value='100']") private WebElement DonationAmount;
 	@FindBy(xpath="//label[@for='fund']") private WebElement Fund;
@@ -36,6 +38,10 @@ public class DonorLoginPage1_2
 	}
 
 //	3
+	public void clickonDonate()
+	{
+		Donate.click();
+	}
 	public void clickDonorLoginPageDNow() {
 		DonateNow.click();	
 	}
@@ -48,9 +54,9 @@ public class DonorLoginPage1_2
 	
 	public void clickoncause(WebDriver driver)
 	{
-		WebElement type = driver.findElement(By.xpath("//select[@name='sel-fund']"));
+		WebElement type = driver.findElement(By.xpath("//select[@class='required border border-danger']"));
 		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
-		s.selectByIndex(3);
+		s.selectByIndex(2);
 	}
 	
 	public void setDonorLoginPageFname(String Fname) {

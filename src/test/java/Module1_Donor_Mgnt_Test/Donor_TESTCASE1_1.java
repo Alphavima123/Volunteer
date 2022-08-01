@@ -45,7 +45,7 @@ public class Donor_TESTCASE1_1 extends Baseclass_Portal_page
 	public void FillInfo() throws EncryptedDocumentException, IOException
 	{
 		TestcaseID=100;
-		
+		login.clickonDonate();
 		login.clickDonorLoginPageDNow();
 		login.clickDonorLoginPageDAmount();
     	login.clickDonorLoginPageCFund(); 
@@ -90,7 +90,7 @@ public class Donor_TESTCASE1_1 extends Baseclass_Portal_page
 	public void closeBrowser() throws InterruptedException 
 	{	
 		Thread.sleep(5000);
-	//	driver.close();
+		driver.close();
 		login=null;				//clear all global variable to null--> to clear the garbage collector
 		sh=null;
 		driver=null;		

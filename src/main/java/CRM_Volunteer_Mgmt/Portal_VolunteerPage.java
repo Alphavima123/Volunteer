@@ -1,6 +1,7 @@
 package CRM_Volunteer_Mgmt;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,10 +32,13 @@ public class Portal_VolunteerPage
 	
 //	@FindBy(xpath="//input[@class='select2-input select2-default']")private WebElement AreaofIntrest;
 	@FindBy(xpath="//textarea[@name='further_information']")private WebElement further_information;
-	@FindBy(xpath="(//button[@type='submit'])[2]")private WebElement clickonsubmit;
+	@FindBy(xpath="//button[text()='Submit']")private WebElement clickonsubmit;
 	@FindBy(xpath="//a[text()='Back to My Dashboard']")private WebElement clickonDashboard;
-	@FindBy(xpath="(//span[@class='active-para'])[5]")private WebElement clickonViewDetails;
+	@FindBy(xpath="(//span[@class='active-para'])[1]")private WebElement clickonViewDetails;
 	@FindBy(xpath="(//button[@data-target='#applyNow'])[2]")private WebElement clickonApplyNow;
+	@FindBy(xpath="//a[text()=' MY PROFILE']")private WebElement clickonMyProfile;
+	@FindBy(xpath="//a[text()=' MY OPPORTUNITY']")private WebElement clickonMYOPPORTUNITY;
+	@FindBy(xpath="//a[text()=' MY SCHEDULES']")private WebElement clickonMYSCHEDULES;
 
 	
 	
@@ -64,12 +68,7 @@ public class Portal_VolunteerPage
 	{
 		EmailAddress.sendKeys(email);		
 	}
-//	public void getdata(WebDriver driver)
-//	{
-//		String Email = driver.findElement(By.xpath("//input[@name='Email Address']")).getText();
-//		System.out.println(Email);
-//		Reporter.log(Email, true);
-//	}
+
 	public void setVolunteerpagePassword(String email)
 	{
 		Password.sendKeys(email);
@@ -137,7 +136,7 @@ public class Portal_VolunteerPage
 	{
 		WebElement type = driver.findElement(By.xpath("//select[@name='age_range']"));
 		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
-		s.selectByIndex(3);
+		s.selectByIndex(0);
 	}
 	
 	public void setVolunteerpagevolunteer_experience(String vexperience)
@@ -149,7 +148,7 @@ public class Portal_VolunteerPage
 	{
 		WebElement type = driver.findElement(By.xpath("//select[@name='want_to_volunteer']"));
 		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
-		s.selectByIndex(2);
+		s.selectByIndex(0);
 	}
 	public void clickonAreaofIntrest(WebDriver driver)
 	{
@@ -180,6 +179,42 @@ public class Portal_VolunteerPage
 	public void clickonApplyNow()
 	{
 		clickonApplyNow.click();
+	}
+	public void clickonMyProfile()
+	{
+		clickonMyProfile.click();
+	}
+//	public void clickonMyProfiler(WebDriver driver) 
+//	{
+//		WebElement cal = driver.findElement(By.tagName("li"));
+//		JavascriptExecutor js= ((JavascriptExecutor)driver);
+//		js.executeScript("arguments[0].click();", cal);
+//	//	js.executeScript("arguments[0].click();", cal);
+//	}
+//	public void getfirstname(WebDriver driver)
+//	{
+//		WebElement fname = driver.findElement(By.tagName("h5"));
+//		int i;
+//		for(int i1=0; i1<=7; i1++)
+//		{
+//			fname.getText();
+//			System.out.println(fname);
+//		}
+//	//	System.out.println("Name : " + fname);
+//	}
+//	public void getemail(WebDriver driver)
+//	{
+//		String email = driver.findElement(By.xpath("//p[text()='Email']")).getText();
+//		System.out.println("Email : " + email);
+//	}
+
+	public void clickonMYOPPORTUNITY()
+	{
+		clickonMYOPPORTUNITY.click();
+	}
+	public void clickonMYSCHEDULES()
+	{
+		clickonMYSCHEDULES.click();
 	}
 	
 }

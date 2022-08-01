@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 public class DonorLoginPage1_5 
 {
 //1
+	@FindBy(xpath="//a[text()='Donate']") private WebElement Donate;
+
 	@FindBy(xpath="//label[@for='donatemonthly']") private WebElement DonateMonthly;
     @FindBy(xpath="//button[@value='100']") private WebElement DonationAmount;
 	@FindBy(xpath="//label[@for='cause']") private WebElement CauseFund;
@@ -36,6 +38,10 @@ public class DonorLoginPage1_5
 	}
 
 //	3
+	public void clickonDonate()
+	{
+		Donate.click();
+	}
 	public void clickDonorLoginPageDmonthly() {
 		DonateMonthly.click();	
 	}

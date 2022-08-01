@@ -13,7 +13,7 @@ public	WebDriver driver;
 	@SuppressWarnings("deprecation")
 	public void initilizeBrowser() throws IOException 
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MonishSahare\\eclipse-workspace\\Maven\\Browser\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\MonishSahare\\git\\Maven\\Browser\\chromedriver.exe");
 		
 		 driver=new ChromeDriver();
 		driver.manage().window().maximize();

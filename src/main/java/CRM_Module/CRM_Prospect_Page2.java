@@ -1,8 +1,10 @@
 package CRM_Module;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -24,11 +26,12 @@ public class CRM_Prospect_Page2
     @FindBy(xpath ="//input[@aria-label='Business Phone Ext.']") private WebElement BusinessPhoneExt; 
     @FindBy(xpath ="//input[@aria-label='Mobile Phone']") private WebElement Mobilephone; 
     
-    @FindBy(xpath = "//input[@aria-label='Cause, Lookup']")private WebElement cause;
-    
+ //   @FindBy(xpath = "//input[@aria-label='Cause, Lookup']")private WebElement cause;
+    @FindBy(xpath = "//input[@aria-label='Description']")private WebElement Description;
+
 	@FindBy(xpath = "//button[@aria-label='Save (CTRL+S)']")private WebElement clickonsave;
 	@FindBy(xpath = "//button[@title='Qualify']")private WebElement clickonqualify;
-	@FindBy(xpath = "//button[@id='confirmButton']")private WebElement clickonpopup;
+	@FindBy(xpath = "//button[@aria-label='OK']")private WebElement clickonOK;
 	
 	public CRM_Prospect_Page2 (WebDriver driver)
 	{
@@ -137,15 +140,25 @@ public class CRM_Prospect_Page2
 		Mobilephone.sendKeys(Mphone);
 	}
 	
-	public void setCRMprospectypage2cause(String username) throws InterruptedException
+	public void clickoncause(WebDriver driver)
 	{
-//		WebElement type = driver.findElement(By.xpath("(//input[@role=\"combobox\"])[4]"));
-//		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
-//		s.selectByIndex(1);
-		
-		cause.clear();
-		Thread.sleep(2000);
-		cause.sendKeys("Environment");
+		WebElement cause = driver.findElement(By.xpath("//input[@aria-label='Cause, Lookup']"));
+		Actions act=new Actions(driver);
+		act.click(cause).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ARROW_DOWN).perform();
+		act.sendKeys(Keys.ENTER).perform();		
+	}
+	public void clickonTimeframe(WebDriver driver)					
+	{
+		WebElement type = driver.findElement(By.xpath("//select[@aria-label='Timeframe']"));
+		org.openqa.selenium.support.ui.Select s=new org.openqa.selenium.support.ui.Select(type);
+	s.selectByIndex(4);
+	}
+	public void setCRMpropspectDescription(String discription)
+	{
+		Description.sendKeys(discription);
 	}
 	
 	
@@ -157,9 +170,9 @@ public class CRM_Prospect_Page2
 	{
 		clickonqualify.click();
 	}
-	public void clickonpopupprospectpage2()
+	public void clickonOK()
 	{
-		clickonpopup.click();
+		clickonOK.click();
 	}
 
 	
